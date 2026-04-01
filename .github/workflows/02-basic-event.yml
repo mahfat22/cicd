@@ -1,7 +1,9 @@
 name: Basic File Workflow
 
-on:
-  workflow_dispatch
+on: [
+  push,
+  pull_request,
+]
 
 jobs:
   create-file:
@@ -9,4 +11,3 @@ jobs:
     steps:
       - name: print message
         run: echo "print message"
-
