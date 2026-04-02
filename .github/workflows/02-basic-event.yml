@@ -1,9 +1,6 @@
-name: Basic File Workflow
+name: Basic 2 File Workflow
 
-on: [
-  push,
-  pull_request,
-]
+on: [push, pull_request]
 
 jobs:
   create-file:
