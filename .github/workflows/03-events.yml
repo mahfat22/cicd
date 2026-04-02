@@ -1,0 +1,12 @@
+name: Events Push Workflow
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  create-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print message
+        run: echo "print message"
