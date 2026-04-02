@@ -3,7 +3,7 @@ name: Events Push Workflow
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   create-file:
     runs-on: ubuntu-latest
