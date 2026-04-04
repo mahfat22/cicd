@@ -1,0 +1,14 @@
+name: External Trigger Workflow
+
+on:
+  repository_dispatch:
+    types: [my-custom-signal]  
+
+jobs:
+  execute-task:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Message
+        run: |
+          echo "تم استلام الإشارة بنجاح!"
+          echo "البيانات المرسلة: ${{ github.event.client_payload.info }}"
