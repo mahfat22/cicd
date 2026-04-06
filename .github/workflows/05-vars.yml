@@ -1,0 +1,19 @@
+name: vars Workflow
+
+on:
+  repository_dispatch:
+    types: [my-custom-signal]
+
+env:
+  APP_NAME: my-app
+  ENVIRONMENT: production
+
+jobs:
+  execute-task:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Message
+        run: |
+          echo "App: $APP_NAME"
+          echo "Env: $ENVIRONMENT"
+          echo "تم استلام الإشارة بنجاح!" 
