@@ -14,5 +14,5 @@ jobs:
         run: |
           echo "App: $APP_NAME"
           echo "Env: $ENVIRONMENT"
-          echo "Course: $MY_COURSE_NAME"
+          echo "Course: var.$MY_COURSE_NAME"
           echo "تم استلام الإشارة بنجاح!"
