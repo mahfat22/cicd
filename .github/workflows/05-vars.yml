@@ -1,6 +1,14 @@
 name: vars Workflow
 
-on: [push, pull_request]
+# on: [push, pull_request]
+
+on:
+  push:
+    # branches:
+    #   - main
+
+    branches-ignore:
+      - main
 
 env:
   APP_NAME: my-app

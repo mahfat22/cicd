@@ -2,7 +2,10 @@ name: Events Push Workflow
 
 on:
   push:
-    branches:
+    # branches:
+    #   - main
+
+    branches-ignore:
       - main
 jobs:
   create-file:
