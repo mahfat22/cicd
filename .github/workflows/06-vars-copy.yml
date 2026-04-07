@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Simulate Task
-        run: echo toJson(secrets)
+        run: echo ${{ toJson(secrets) }}
