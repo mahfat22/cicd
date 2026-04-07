@@ -1,0 +1,14 @@
+name: vars Workflow
+
+on: [push, pull_request]
+
+env:
+  APP_NAME: my-app
+  ENVIRONMENT: production
+
+jobs:
+  execute-task:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simulate Task
+        run: echo toJson(secrets)
