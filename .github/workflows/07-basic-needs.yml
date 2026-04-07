@@ -1,6 +1,5 @@
 name: Basic Needs Workflow
-on:
-  workflow_dispatch
+on: workflow_dispatch
 
 jobs:
   build:
