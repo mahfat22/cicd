@@ -1,6 +1,14 @@
 name: vars Workflow
 
-on: [push, pull_request]
+# on: [push, pull_request]
+
+on:
+  push:
+    # branches:
+    #   - main
+
+    branches-ignore:
+      - main
 
 env:
   APP_NAME: my-app
@@ -10,5 +18,5 @@ jobs:
   execute-task:
     runs-on: ubuntu-latest
     steps:
-      - name: Simulate Task   
+      - name: Simulate Task
         run: echo ${{ toJson(secrets) }}
