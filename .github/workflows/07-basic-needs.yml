@@ -1,7 +1,6 @@
 name: Basic Needs Workflow
 on:
-  repository_dispatch:
-    types: [my-custom-signal]
+  workflow_dispatch
 
 jobs:
   build:
