@@ -1,0 +1,12 @@
+name: Custome Workflow
+on: workflow_dispatch
+
+jobs:
+  custome_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Php
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '5.4'
+          extensions: swoole-1.9.3
