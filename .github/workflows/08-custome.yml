@@ -8,5 +8,5 @@ jobs:
       - name: Set up Php
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '5.4'
-          extensions: swoole-1.9.3
+          php-version: '8.5'
+          extensions: :mbstring
