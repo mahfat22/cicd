@@ -8,10 +8,8 @@ jobs:
         image: redis:latest
 
     steps:
-      - name: Check Redis Service
-        run: |
-          echo "Waiting for Redis to be healthy..."
-          while ! redis-cli ping; do
-            sleep 1
-          done
-          echo "Redis is healthy and ready to use!"
+      - name: install redis-cli
+        run: sudo apt-get update && sudo apt-get install -y redis-tools
+
+      - name: Test Redis Connection
+        run: redis-cli -h localhost ping
