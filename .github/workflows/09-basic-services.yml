@@ -4,20 +4,14 @@ jobs:
   basic_services_job:
     runs-on: ubuntu-latest
     services:
-      mysql:
-        image: mysql:latest
-        env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: test_db
-        ports:
-          - 3306:3306
-        options: --health-cmd="mysqladmin ping --silent" --health-interval=10s --health-timeout=5s --health-retries=3
+      redis:
+        image: redis:latest
 
     steps:
-      - name: Check MySQL Service
+      - name: Check Redis Service
         run: |
-          echo "Waiting for MySQL to be healthy..."
-          while ! mysqladmin ping -h mysql -u root -proot --silent; do
+          echo "Waiting for Redis to be healthy..."
+          while ! redis-cli ping; do
             sleep 1
           done
-          echo "MySQL is healthy and ready to use!"
+          echo "Redis is healthy and ready to use!"
