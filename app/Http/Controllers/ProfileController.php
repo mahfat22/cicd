@@ -18,11 +18,9 @@ class ProfileController extends Controller
         ]);
     }
 
-    public function update(Request $request){
-
-
-
-$user = $request->user();
+    public function update(Request $request): RedirectResponse
+    {
+        $user = $request->user();
 
 
 
