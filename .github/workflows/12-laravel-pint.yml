@@ -1,0 +1,28 @@
+name: laravel pint
+on:
+  workflow_dispatch
+
+jobs:
+  laravel-pint-job:
+    runs-on: ubuntu-latest
+    steps:
+
+
+      - name: checkout code
+        uses: actions/checkout@v4.2.2
+
+      - name: install laravel pint
+        run: composer global require laravel/pint
+
+      - name: run laravel pint
+        run: ~/.composer/vendor/bin/pint --test
+
+      - name: commit changes
+        run: |
+            git config --local user.name "github-actions"
+            git config --local user.email "github-actions@users.noreply.github.com"
+            git add .
+            git commit -m "fix code style issues" || echo "No changes to commit"
+            git push origin HEAD:${{ github.head_ref }}
+
+
