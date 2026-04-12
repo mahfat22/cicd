@@ -10,14 +10,15 @@ use Illuminate\View\View;
 class ProfileController extends Controller
 {
     public function edit(Request $request): View
+
+
     {
         return view('profile.edit', [
             'user' => $request->user(),
         ]);
     }
 
-    public function update(Request $request): RedirectResponse
-    {
+    public function update(Request $request): RedirectResponse{
         $user = $request->user();
 
         $validated = $request->validate([
