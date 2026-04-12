@@ -10,8 +10,6 @@ use Illuminate\View\View;
 class ProfileController extends Controller
 {
     public function edit(Request $request): View
-
-
     {
         return view('profile.edit', [
             'user' => $request->user(),
@@ -21,8 +19,6 @@ class ProfileController extends Controller
     public function update(Request $request): RedirectResponse
     {
         $user = $request->user();
-
-
 
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
@@ -37,7 +33,6 @@ class ProfileController extends Controller
         ]);
 
         $user->update($validated);
-        
 
         return redirect()
             ->route('profile.edit')
