@@ -1,0 +1,22 @@
+name: Comment on PR
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  comment-on-pr-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4.2.2
+
+      - name: comment on PR
+        run: |
+          gh pr comment ${{ github.event.pull_request.number }} \
+            --body "We will not be merging your PR. Please open a new PR with the correct changes."
+
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
